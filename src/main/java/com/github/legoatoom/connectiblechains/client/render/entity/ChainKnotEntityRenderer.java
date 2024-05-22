@@ -122,6 +122,9 @@ public class ChainKnotEntityRenderer extends EntityRenderer<ChainKnotEntity> {
 
     private Identifier getKnotTexture(Item item) {
         Identifier id = Registries.ITEM.getId(item);
+        if (id.getNamespace().equals("mythicmetals_decorations"))
+            return new Identifier(id.getNamespace(), "textures/item/chain/" + id.getPath() + ".png");
+            
         return new Identifier(id.getNamespace(), "textures/item/" + id.getPath() + ".png");
     }
 
