@@ -37,20 +37,8 @@ jobs:
       - name: Build artifacts
         run: ./gradlew clean build
 
-      # Runs a set of commands using the runners shell
-      - name: Publish Minecraft Mods
-        # You may pin to the exact commit or the version.   
-        uses: Kir-Antipov/mc-publish@v3.2
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
         with:
-          modrinth-id: ykSfIgTw
-          modrinth-token: ${{ secrets.MODRINTH_API_KEY }}
-          modrinth-files-secondary: build/libs/*-@(sources\|javadoc).jar
-          curseforge-id: 415681
-          curseforge-token: ${{ secrets.CURSEFORGE_API_KEY }}
-          
-          files: build/libs/!(*-@(dev|sources)).jar
-          github-files-secondary: build/libs/*-@(dev\|sources\|javadoc).jar
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          loaders: fabric
-          game-versions: 1.20.1
-          java: 17
+          name: connectiblechains-artifacts
+          path: build/libs/*.jar
