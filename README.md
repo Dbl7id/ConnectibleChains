@@ -1,4 +1,5 @@
 <!--suppress HtmlDeprecatedAttribute, HtmlRequiredAltAttribute -->
+
 <p align="center"><img src="https://raw.githubusercontent.com/legoatoom/ConnectibleChains/master/src/main/resources/assets/logo.png" height="128"></p>
 <h3 align="center">Connectible Chains</h3>
 <p align="center">Connect your fences and walls with a decorative chain!</p>
